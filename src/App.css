@@ -32,7 +32,37 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.blank {
+  color: rgb(218, 86, 86);
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.blank:hover {
+  color: rgb(11, 204, 101);
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+
+.inputClass {
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border: solid;
+  border-color: gray;
+}
+
+.welcome {
+  margin: 10px;
 }
