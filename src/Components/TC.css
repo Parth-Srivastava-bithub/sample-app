@@ -1,0 +1,31 @@
+#tcarea {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    transition: 0.1s;
+}
+
+#tcarea:hover {
+    background-color: rgb(61, 59, 59);
+    cursor: pointer;
+}
+
+.textbody {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgb(12, 167, 12);
+    margin: 10px;
+    width: 100px;
+}
+
+.btn:hover {
+    background-color: rgb(12, 167, 12);
+}
