@@ -1,0 +1,58 @@
+{
+    "status": "ok",
+    "totalResults": 4,
+    "articles": [
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Andrew Williams",
+            "title": "Fairphone Has a New Plan to Get You to Care",
+            "description": "WIRED loves Fairphone and everything it stands for—but people just aren't buying its devices, and the few who have don't need to upgrade.",
+            "url": "https://www.wired.com/story/fairphone-proves-you-really-dont-give-a-damn/",
+            "urlToImage": "https://media.wired.com/photos/685efd83c3016ccff190a75d/191:100/w_1280,c_limit/Fairphone-Proves-You-Don%E2%80%99t-Give-a-Damn-Gear54612585841_5f9fe29032_o.jpg",
+            "publishedAt": "2025-06-29T11:00:00Z",
+            "content": "Fairphone has released a new phone, the Fairphone 6. The series began in 2013, and theres still nothing else quite like it, anywhere. These mobile phones are what almost all other tech is not: ethica… [+2723 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Slate Magazine"
+            },
+            "author": "Lizzie O'Leary",
+            "title": "The FTC's Merger Shakedown",
+            "description": "Inside the FTC's conditions for an advertising merger.",
+            "url": "https://slate.com/podcasts/what-next-tbd/2025/06/how-the-ftc-is-fighting-back-against-x-advertising-boycotts",
+            "urlToImage": "https://compote.slate.com/images/722e0f01-84a4-42ae-93af-b010e8a8e71a.jpeg?crop=4500%2C3000%2Cx0%2Cy0&width=1560",
+            "publishedAt": "2025-06-29T09:30:00Z",
+            "content": "Under a normal administration, a merger between two large advertising firms might attract the governments interest for anti-monopoly reasons. Under this one, the Federal Trade Commission is creating … [+479 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Xataka.com"
+            },
+            "author": "Alberto García",
+            "title": "Traca final del Red friday y Semana web gaming. Cinco ofertas para aprovechar las campañas de MediaMarkt durante el fin de semana",
+            "description": "Dentro de unas semanas se celebrará el próximo Amazon Prime Day 2025 y las tiendas ya están lanzando campañas muy potentes en lo relativo a ofertas. MediaMarkt ahora mismo, y hasta el próximo 1 de julio, tiene activas dos campañas muy grandes: la Traca final …",
+            "url": "https://www.xataka.com/seleccion/traca-final-red-friday-semana-web-gaming-cinco-ofertas-para-aprovechar-campanas-mediamarkt-durante-fin-semana",
+            "urlToImage": "https://i.blogs.es/e9a2ed/mediamarkt/840_560.jpeg",
+            "publishedAt": "2025-06-29T08:30:05Z",
+            "content": "Dentro de unas semanas se celebrará el próximo Amazon Prime Day 2025 y las tiendas ya están lanzando campañas muy potentes en lo relativo a ofertas. MediaMarkt ahora mismo, y hasta el próximo 1 de ju… [+3707 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Xataka.com"
+            },
+            "author": "Alejandro Alcolea",
+            "title": "En 2017 el iPhone revolucionó los smartphones y en el camino provocó el canto de cisne de los móviles divertidos",
+            "description": "¿Recuerdas la época de Nokia? No sé aún cómo lo lograron, pero en su apogeo, la compañía finlandesa no sólo lanzaba muchos móviles, sino que cada uno era de su padre y de su madre. Diseños loquísimos, algunos estrambóticos y otros que no había por dónde coger…",
+            "url": "https://www.xataka.com/moviles/2017-iphone-revoluciono-smartphones-supuso-canto-cisne-moviles-divertidos",
+            "urlToImage": "https://i.blogs.es/38d0cd/original/840_560.jpeg",
+            "publishedAt": "2025-06-29T11:30:05Z",
+            "content": "¿Recuerdas la época de Nokia? No sé aún cómo lo lograron, pero en su apogeo, la compañía finlandesa no sólo lanzaba muchos móviles, sino que cada uno era de su padre y de su madre. Diseños loquísimos… [+15541 chars]"
+        }
+    ]
+}

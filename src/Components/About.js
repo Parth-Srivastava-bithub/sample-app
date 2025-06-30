@@ -1,38 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function About(props) {
-    const [textDark, setTextDark] = useState("Light");
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white',
-        transition: 'all 0.2s ease-in-out'
-    });
-
-    const changeDark = () => {
-        if (textDark === "Dark") {
-            setTextDark("Light");
-            setMyStyle({
-                color: "black",
-                backgroundColor: "white",
-                transition: 'all 0.2s ease-in-out'
-
-            });
-            props.showAlert("About us got changed", "success")
-        } else {
-            setTextDark("Dark");
-            setMyStyle({
-                color: "#f1f1f1",
-                backgroundColor: "#121212",
-                transition: 'all 0.2s ease-in-out'
-
-            });
-            props.showAlert("About us second time changed", "success")
-
-        }
-    };
+    let myStyle = {
+        color: props.mode === 'dark' ? 'white' : 'black',
+        backgroundColor: props.mode === 'dark' ? 'black' : 'white',
 
 
-
+        transition: '0.5s',
+        borderRadius: '10px',
+        padding: '10px'
+    }
 
     return (
         <div className='container my-4' style={myStyle}>
@@ -41,46 +18,40 @@ export default function About(props) {
                 <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" style={myStyle}>
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={myStyle}>
-                            Accordion Item #11
+                            Our Mission
                         </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample" style={myStyle}>
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>We strive to deliver high-quality software solutions.</strong> Our mission is to empower businesses and individuals by providing reliable, efficient, and user-friendly applications that solve real-world problems.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" style={myStyle}>
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={myStyle}>
-                            Accordion Item #2
+                            Our Team
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample" style={myStyle}>
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>Our team consists of passionate developers and designers.</strong> We value collaboration, creativity, and continuous learning to ensure we stay ahead in the ever-evolving tech landscape.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item" style={myStyle}>
                     <h2 className="accordion-header" style={myStyle}>
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={myStyle}>
-                            Accordion Item #3
+                            Contact Us
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample" style={myStyle}>
                         <div className="accordion-body" style={myStyle}>
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>We would love to hear from you!</strong> For any inquiries, feedback, or support, please reach out to us at <code>support@example.com</code> or use the contact form on our website.
                         </div>
                     </div>
                 </div>
             </div>
-            <div style={myStyle}>
-                <button type="button" class="btn btn-success my-3" onClick={changeDark}>{textDark} Mode</button>
-            </div>
-
-
-
         </div>
     )
 }

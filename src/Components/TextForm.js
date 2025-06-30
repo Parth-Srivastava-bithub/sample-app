@@ -7,6 +7,7 @@ export default function TextForm(props) {
     const [difference, setDifference] = useState(text.length);
 
     const handleClick = () => {
+        let disabled = true;
         if (boole === true) {
             let newText = text.toUpperCase();
             setText(newText);
@@ -75,29 +76,49 @@ export default function TextForm(props) {
         setText(newText);
     }
 
-    const putRandom = () => {
+    const stopSpeak = () => {
+        window.speechSynthesis.cancel();
+        props.showAlert("Speech stopped", "success");
+    }
 
-        setText(`"Lorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.","React makes it painless to create interactive UIs.","Hello, world!" "Sample random text for testing Lorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.","React makes it painless to create interactive UIs.","Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.","React makes it painless to create interactive UIs.","Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.","React makes it painless to create interactive UIs.","Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.","React makes it painless to create interactive UIs.","Hello, world!" "Sample random text for testing."`);
+    const putRandom = () => {
+        const randomText = `"Lorem ipsum dolor sit amet.","The quick brown fox jumps over the lazy dog.", "React makes it painless to create interactive UIs.", "Hello, world!" "Sample random text for testing Lorem ipsum dolor sit amet.", "The quick brown fox jumps over the lazy dog.", "React makes it painless to create interactive UIs.", "Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.", "The quick brown fox jumps over the lazy dog.", "React makes it painless to create interactive UIs.", "Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.", "The quick brown fox jumps over the lazy dog.", "React makes it painless to create interactive UIs.", "Hello, world!" "Sample random text for testingLorem ipsum dolor sit amet.", "The quick brown fox jumps over the lazy dog.", "React makes it painless to create interactive UIs.", "Hello, world!" "Sample random text for testing."`
+
+        let start = Math.floor(Math.random() * (randomText.length + 1))
+        let end = Math.floor(Math.random() * (randomText.length + 1))
+
+        setText(randomText.substring(start, end));
+
+    }
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(text)
+        props.showAlert("Copied to clipboard!!", "success")
     }
     return (
         <div>
             <h1>{props.topHeading}</h1>
             <div className="mb-3">
                 <label htmlFor="mybox" className="form-label">{props.heading}</label>
-                <textarea className="form-control" id="mybox" rows="8" value={text} onChange={onChange} style={{ backgroundColor: props.mode === "dark" ? "black" : "white", color: props.mode === "dark" ? "white" : "black" }}></textarea>
+                <textarea className="form-control" id="mybox" rows="8" value={text} onChange={onChange} style={{
+                    backgroundColor: props.mode === "dark" ? "black" : props.mode === "green" ? "lightgreen" : "white",
+                    color: props.mode === "dark" ? "white" : props.mode === "green" ? "darkgreen" : "black"
+                }}></textarea>
             </div>
-            <button className="btn btn-success me-2" onClick={handleClick}>Convert to {value}</button>
-            <button className="btn btn-success me-2" onClick={handleClickCap}>Convert To Capitalize</button>
-            <button className="btn btn-success me-2" onClick={clearIt}>Clear</button>
-            <button className="btn btn-success me-2" onClick={speak}>Speak</button>
-            <button className="btn btn-success me-2" onClick={removeSpace}>Remove Extra Spaces</button>
-            <button className="btn btn-success me-2" onClick={capitalizeEach}>Capitatlize each word</button>
-            <button className="btn btn-success me-2" onClick={putRandom}>Random</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={handleClick} type="button">Convert to {value}</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={handleClickCap} type="button">Convert To Capitalize</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={clearIt} type="button">Clear</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={speak} type="button">Speak</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={removeSpace} type="button">Remove Extra Spaces</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={capitalizeEach} type="button">Capitatlize each word</button>
+            <button className="btn btn-success me-2 mx-1 my-1" onClick={putRandom} type="button">Random</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={stopSpeak} type="button">ShutUp</button>
+            <button disabled={text.length === 0} className="btn btn-success me-2 mx-1 my-1" onClick={handleCopy} type="button">Copy</button>
 
             <div className="container my-3">
                 <h1>Your Text Summary</h1>
-                <p>Total Words - {text.split(" ").length - 1} and Text Length - {text.length} characters</p>
-                <p>{text.split(" ").length * 0.008} Minutes - Read</p>
+                <p>Total Words - {text.trim().length === 0 ? 0 : text.trim().split(/\s+/).length} and Text Length - {text.length} characters</p>
+                <p>{text.trim().length === 0 ? 0.000 : text.trim().split(/\s+/).length * 0.008} Minutes - Read</p>
                 <p>{difference} spaces removed</p>
             </div>
 
